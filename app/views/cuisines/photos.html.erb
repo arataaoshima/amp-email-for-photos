@@ -1,0 +1,5 @@
+<% require "json" %>
+<p>Email</p>
+<% @students_info.each do |s| %>
+<%= s["email"] %><br>
+<% end %>
