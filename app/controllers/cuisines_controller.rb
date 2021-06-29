@@ -27,7 +27,8 @@ class CuisinesController < ApplicationController
   end
 
   def photos
-    @response = RestClient.get ENV['URL']
+    #@response = RestClient.get ENV['URL']
+    @response = RestClient.get "https://canadiancollege.ampeducator.ca/api/student/get?apiKey=#{ENV['API_KEY']}&imageDocumentID=0&currentStatus=Enrolled&currentProgramStatus=enrolled"
     @students_info = JSON.parse(@response.body)["data"]
     #@emails = @student_info["email"]
     #render json: @students_info
